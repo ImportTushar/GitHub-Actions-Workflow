@@ -4,7 +4,10 @@ on:
   push:
     branches:
       - '*'
-      
+
+  schedule:
+      - cron: '0 10 * * 2,4'  # Runs at 10:00 AM every Tuesday and Thursday
+
   pull_request:
       branches:
         - 'test'
@@ -20,6 +23,13 @@ jobs:
       - name: "Running on master or any branch"
         run: echo "Running on master or any branch"
 
+
+  on-schedule:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Scheduled Workflow"
+        run: echo "This workflow runs on a schedule, every Tuesday and Thursday at 10:00 AM"
 
   on-pull_request:
     if: github.event_name == 'pull_request'
