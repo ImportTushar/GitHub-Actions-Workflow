@@ -2,4 +2,4 @@ Welcome to the GitHub Actions Workflow setup
 
 Added First Workflow
 
-Added a new Workflow
+Added a new Workflows.

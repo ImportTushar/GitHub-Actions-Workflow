@@ -1,0 +1,16 @@
+name: "New Commit comming"
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+      branches:
+        - '*'
+
+jobs:
+  New_Commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Print New Commit comming"
+        run: echo "New Commit comming, Workflow runs on any branch"
