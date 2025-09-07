@@ -1,0 +1,29 @@
+name: "Multievent Trigger"
+
+on:
+  push:
+    branches:
+      - '*'
+      
+  pull_request:
+      branches:
+        - 'test'
+
+  workflow_dispatch:
+    
+
+jobs:
+  on-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Running on master or any branch"
+        run: echo "Running on master or any branch"
+
+
+  on-pull_request:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Running on pull request to test branch"
+        run: echo "Running on pull request to test branch"
