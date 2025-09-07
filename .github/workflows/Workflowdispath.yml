@@ -34,3 +34,10 @@ jobs:
     steps:
       - name: "Manually triggered workflow"
         run: echo "This workflow was triggered manually using workflow_dispatch"
+
+  on-pull-request-closed:
+        if: github.event.action == 'closed' && github.event.pull_request.merged == false
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Pull request closed without merge"
+              run: echo "The pull request was closed without being merged"
