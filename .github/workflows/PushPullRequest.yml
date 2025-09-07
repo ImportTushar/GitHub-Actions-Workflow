@@ -1,9 +1,11 @@
-name: "Pull Request or Push"
+name: "New Pull and Push Request"
 
 on:
   push:
     branches:
-      - '*'
+      - master
+      - Production
+      
   pull_request:
       branches:
         - 'test'
