@@ -8,7 +8,7 @@ on:
   pull_request:
       branches:
         - 'test'
-
+      types: [opened, synchronize, reopened]
   workflow_dispatch:
     
 
