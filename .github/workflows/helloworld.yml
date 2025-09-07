@@ -8,6 +8,7 @@ on:
         branches:
             - master
             - Production
+            - Testing
 
 # Jobs: Set of Steps to be executed 
 jobs:
